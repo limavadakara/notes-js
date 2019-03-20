@@ -10,7 +10,6 @@
     var noteList = new NoteList();
     noteList.storeNote("A new note");
     testNote = noteList.getNotes().shift();
-    assert.isTrue(testNote instanceof Note);
     assert.isTrue(testNote.getText() === "A new note");
   }
   testNoteListCreatesAndStoresANoteInItsArray();

@@ -1,3 +1,4 @@
+"use strict";
 (function(exports){
   var notes;
   function NoteList(){
@@ -8,6 +9,7 @@
   }
 
   NoteList.prototype.storeNote = function(noteText){
+    
     notes.push((new Note(noteText)));
   }
   exports.NoteList = NoteList;

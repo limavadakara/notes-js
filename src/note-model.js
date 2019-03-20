@@ -1,11 +1,17 @@
+"use strict";
 (function(exports){
-  var text;
-  function Note(texts){
-    text = texts;
-  };
-  Note.prototype.getText = function(){
+
+  function Note(text){
+    var text = text;
+
+function getText() {
     return text;
   }
+
+  return {
+    getText: getText
+  }
+}
   exports.Note = Note;
-  
+
 })(this);

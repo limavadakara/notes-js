@@ -1,3 +1,4 @@
+"use strict";
 (function(exports){
   var listOfNotes;
 
@@ -5,16 +6,14 @@
     listOfNotes = noteList;
   };
   NoteListView.prototype.view = function(){
+      var htmlStringArray = [];
+      htmlStringArray.push("<ul>")
+      listOfNotes.getNotes().forEach(function(note){
+        htmlStringArray.push("<li><div>".concat(note.getText()).concat("</div></li>"));
+      })
+      htmlStringArray.push("</ul>");
+      return htmlStringArray.join("");
 
-      if (listOfNotes.getNotes().length === 0){
-        return "<ul></ul>"
-      }
-      else if(listOfNotes.getNotes().length === 1){
-          return "<ul><li><div>"+listOfNotes.getNotes()[0].getText()+"</div></li></ul>"
-        }
-      else {
-
-        }
   }
   exports.NoteListView = NoteListView;
 })(this);
