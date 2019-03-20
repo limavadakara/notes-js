@@ -1,0 +1,25 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limavadakara/notes-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limavadakara/notes-js/issues"
+  },
+  "homepage": "https://github.com/limavadakara/notes-js#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
