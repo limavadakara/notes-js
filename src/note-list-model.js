@@ -1,16 +1,21 @@
 "use strict";
 (function(exports){
-  var notes;
-  function NoteList(){
-    notes = [];
-  };
-  NoteList.prototype.getNotes = function(){
-    return notes;
-  }
 
-  NoteList.prototype.storeNote = function(noteText){
-    
-    notes.push((new Note(noteText)));
-  }
+  function NoteList(){
+    var notes = [];
+
+
+    function getNotes() {
+      return notes;
+    }
+    function storeNote(noteText) {
+      notes.push((new Note(noteText)));
+    }
+
+    return {
+      getNotes: getNotes,
+      storeNote: storeNote
+    }
+  }  
   exports.NoteList = NoteList;
 })(this);

@@ -4,13 +4,13 @@
   function Note(text){
     var text = text;
 
-function getText() {
-    return text;
-  }
+    function getText() {
+      return text;
+    }
 
-  return {
-    getText: getText
-  }
+    return {
+      getText: getText
+    }
 }
   exports.Note = Note;
 
