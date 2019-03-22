@@ -8,14 +8,14 @@
     function getNotes() {
       return notes;
     }
-    function storeNote(noteText) {
-      notes.push((new Note(noteText)));
+    function storeNote(note) {
+      notes.push(note);
     }
 
     return {
       getNotes: getNotes,
       storeNote: storeNote
     }
-  }  
+  }
   exports.NoteList = NoteList;
 })(this);

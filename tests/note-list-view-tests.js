@@ -8,23 +8,43 @@
   testThatNoteListViewReturnsTheRightHtmlforAnEmptyNoteList();
 
   function testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasOneNote(){
-    var noteList = new NoteList();
-    noteList.storeNote("A note");
-    var noteListView = new NoteListView(noteList);
+    var noteListDouble = {
+      getNotes: function(){
+        return [{
+                  getText: function(){
+                    return "A note"
+                                  }
+                    }]
+                  }
+                }
+    var noteListView = new NoteListView(noteListDouble);
     assert.isTrue(noteListView.view() === "<ul><li><div>A note</div></li></ul>")
   }
   testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasOneNote();
 
   function testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasThreeNotes(){
-    var noteList = new NoteList();
-    noteList.storeNote("First note");
 
-    noteList.storeNote("Second note");
-    noteList.storeNote("Third note");
-    var noteListView = new NoteListView(noteList);
+    var noteListDouble = {
+      getNotes: function(){
+        return [{
+                  getText: function(){
+                    return "First note"
+                                  }
+                    },
+                {
+                  getText: function(){
+                    return "Second note"
+                                  }
+                    },
+                {
+                  getText: function(){
+                    return "Third note"
+                                  }
+              }]
+            }
+        }
+    var noteListView = new NoteListView(noteListDouble);
     assert.isTrue(noteListView.view() === "<ul><li><div>First note</div></li><li><div>Second note</div></li><li><div>Third note</div></li></ul>")
   }
   testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasThreeNotes();
-
-
 })(this);
