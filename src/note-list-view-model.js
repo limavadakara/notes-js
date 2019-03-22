@@ -8,7 +8,7 @@
       var htmlStringArray = [];
       htmlStringArray.push("<ul>")
       noteList.getNotes().forEach(function(note){
-        htmlStringArray.push("<li><div>".concat(note.getText()).concat("</div></li>"));
+        htmlStringArray.push("<li><div>".concat(note.getText().substring(0,20)).concat("</div></li>"));
       })
       htmlStringArray.push("</ul>");
 

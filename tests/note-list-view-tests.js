@@ -47,4 +47,19 @@
     assert.isTrue(noteListView.view() === "<ul><li><div>First note</div></li><li><div>Second note</div></li><li><div>Third note</div></li></ul>")
   }
   testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasThreeNotes();
+
+  function testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasOneNoteWithTextLongerThan20Chars(){
+    var noteListDouble = {
+      getNotes: function(){
+        return [{
+                  getText: function(){
+                    return "A note that has more than 20 characters is not ver difficult to build"
+                                  }
+                    }]
+                  }
+                }
+    var noteListView = new NoteListView(noteListDouble);
+    assert.isTrue(noteListView.view() === "<ul><li><div>A note that has more</div></li></ul>")
+  }
+  testThatNoteListViewReturnsTheRightHtmlforANoteListThatHasOneNoteWithTextLongerThan20Chars();
 })(this);
