@@ -8,10 +8,10 @@
       var htmlStringArray = [];
       htmlStringArray.push("<ul>")
       noteList.getNotes().forEach(function(note){
-        htmlStringArray.push("<li><div>".concat(note.getText().substring(0,20)).concat("</div></li>"));
+        htmlStringArray.push("<li><div><a href='#notes/".concat(note.id).concat("'>").concat(note.getText().substring(0,20)).concat("</a></div></li>"));
       })
       htmlStringArray.push("</ul>");
-
+      
       return htmlStringArray.join("");
     }
 
